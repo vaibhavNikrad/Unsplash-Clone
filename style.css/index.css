@@ -109,11 +109,56 @@
    position: relative;
    background-image: url("./img-1.jpg");
    background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   text-transform: capitalize;
   }
   .mid-section>img{
     height: 50px;
   }
   .logo{
     font-size: 80px;
-    font-weight: 400;
+    font-weight: 420;
+    color:#fff ;
+    /* display: flex; */
+  }
+  #container{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    /* row-gap: -100px; */
+  }
+  /* #container>div{
+    width: 30%;
+    height: auto;
+    border: 3px solid black;
+  } */
+  .div1>img{
+    width:100%;
+  }
+  .sub-heading{
+    color: #fff;
+    padding: 20px 0 30px;
+    font-size: 30px;
+    text-transform: capitalize;
+    word-spacing: 2px;
+    position: relative;
+    font-weight: 300;
+
+  }
+  .sub-heading::after{
+    content: '';
+    position: absolute;
+    bottom: 0%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: #fff;
+  }
+  #container>div>img{
+    width:100%;
+    height:80%;
   }
