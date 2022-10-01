@@ -68,9 +68,9 @@ a {
   transition: filter 0.5s;
 }
 /*   
-  .nav li:last-child a:hover {
-    filter: brightness(85%);
-  } */
+    .nav li:last-child a:hover {
+      filter: brightness(85%);
+    } */
 
 .nav-search-form {
   margin-left: 1rem;
@@ -102,14 +102,13 @@ a {
   letter-spacing: 1px;
   line-height: 1;
 }
-#category>a:hover{
-  color:black;
+#category > a:hover {
+  color: black;
 }
-#submit-btn{
-  border-radius: 5px ;
+#submit-btn {
+  border-radius: 5px;
 }
-#submit-btn:hover{
-
+#submit-btn:hover {
   border: 2px solid black;
 }
 .mid-section > img {
@@ -119,7 +118,6 @@ a {
   font-size: 80px;
   font-weight: 420;
   color: #fff;
-  
 }
 
 #container {
@@ -127,7 +125,6 @@ a {
   column-gap: 20px;
   width: 100%;
   padding: 40px;
-  
 }
 #container > div {
   width: 100%;
@@ -139,16 +136,15 @@ a {
   background: #f9f9f9;
   /* border: 3px solid red; */
 }
-.nav>li:hover{
-  color:blue;
-
+.nav > li:hover {
+  color: blue;
 }
 .div1 > img {
   width: 100%;
   /* height: 200px; */
 }
 @media only screen and (max-width: 1000px) {
-  #container{
+  #container {
     columns: 2;
     width: 100%;
     margin-left: auto;
@@ -157,7 +153,7 @@ a {
 }
 
 @media only screen and (max-width: 750px) {
-  #container{
+  #container {
     columns: 1;
   }
 }
@@ -187,7 +183,7 @@ a {
   width: 100%;
   height: 100vh;
   position: relative;
-  background-image: url("./img\ 3.jpg");
+  background-image: url("./taylor-heery-jZHNsOL_41Q-unsplash.jpg");
   background-size: cover;
 
   text-transform: capitalize;
@@ -237,80 +233,10 @@ a {
 #mid-section-content > div > p {
   color: #ffff;
   font-size: 20px;
+  text-align: center;
 }
-#search-section {
-  font-size: 18px;
-}
-/* #search-section>placeholder{
-    margin-left: 40px;
-  } */
-
-.image-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80vh;
-  background: #f9f9f9;
-  box-shadow: 0px 5px 50px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  transition: 0.5s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image-popup.hide {
-  display: none;
-  opacity: 0;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 20px;
-  height: 20px;
-  background: #ff4f4f;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-}
-
-.download-btn {
-  text-transform: capitalize;
-  padding: 10px 20px;
-  background: #192f2e;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-
-.large-img {
-  height: 80%;
-  width: auto;
-  max-width: 80%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.controls {
-  background: none;
-  border: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-.pre-btn {
-  left: 20px;
-}
-
-.nxt-btn {
-  right: 20px;
+#mid-section-content > div > button {
+  height: 50px;
+  font-size: large;
+  border-radius: 6px;
 }
