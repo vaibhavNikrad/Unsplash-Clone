@@ -37,7 +37,7 @@
             <li>Advertise</li>
             <li>Blog</li>
           <li>Login / Sign Up</li>
-          <li><a href="#">Submit Photo</a></li>
+          <li id="submit-btn"><a href="#">Submit Photo</a></li>
         </ul>
       </nav>
 
@@ -45,14 +45,14 @@
             <a href="index.html">Editorial</a>
             <a href="travel.html">Travel</a>
             <a href="index.html">Wallpapes</a>
-            <a href="index.html">Nature</a>
+            <a href="nature.html">Nature</a>
             <a href="index.html">3D Renders</a>
             <a href="index.html">Texture&Patterens</a>
             <a href="index.html">Experimental</a>
             <a href="index.html">Architecture</a>
             <a href="index.html">Current Events</a>
             <a href="index.html">Work</a>
-            <a href="index.html">Fashion</a>
+            <a href="fashion.html">Fashion</a>
             <a href="index.html">Film</a>
             <a href="index.html">Food&Drink</a>
             <a href="index.html">Health</a>
@@ -60,17 +60,7 @@
             <a href="index.html">People</a>
             <a href="index.html">Animals</a>
         </div>
-        <!-- <header class="mid-section">
-            <div class="mid-section content">
-              <h1 class="logo">Unsplash</h1>
-              <p class="sub-heading">The internet’s source for visuals.
-                  Powered by creators everywhere.</p>
-            </div> -->
-        <!-- </header> -->
-         
        
-      <!-- </div> -->
-    <!-- </header> -->
     <div id="mid-section">
       <div id="mid-section-content">
         <div>
@@ -80,18 +70,20 @@
           Powered by creators everywhere.</p>
         </div>
            <div>
+            
             <form action="search.html">
-              <input type="text" name="search" placeholder="Search Image">
-              <button class="search-btn" type="submit">Search</button>
+              
+              <input type="text" id="search-section" name="search" placeholder="Search free high-resolution photo ">
+              
+              <!-- <button class="search-btn" type="submit">Search</button> -->
             </form>
            </div>
       </div>
     </div>
-<div id="container">
+<div id="container"></div>
 
-</div>
    
-    
+
   </body>
 </html>
   <script>
@@ -109,7 +101,7 @@
     }
     const APIKIY=`sjYjaQYJg7twCbi4Lj3gr51ujbvUxshEKI3HsvYG5H4`
 
-const random=  `https://api.unsplash.com/photos/random?client_id=${APIKIY}&count=100`
+const random=  `https://api.unsplash.com/photos/random?client_id=${APIKIY}&count=150`
 
 let gallery = document.getElementById("container")
 
@@ -140,5 +132,6 @@ const makeImages=(data)=>{
 
     });
 }
-// getImges()
+getImges()
+
   </script>
