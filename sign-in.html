@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Sign-Up page</title>
+    <style>
+       body{
+        padding: 0%;
+        margin: 0px;
+        box-sizing: border-box;
+       }
+       #parent{
+        width: 100%;
+        height: 630px;
+        display: flex;
+        justify-content: center;
+       }
+       #parent>div{
+        width: 25%;
+        height: 100%;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        border: 1px solid blueviolet;
+        border-radius: 15px;
+       }
+       #parent>div>form{
+        display: flex;
+flex-direction: column;
+
+padding: 30px;
+margin-top: -40px;
+       }
+       #parent>div>form>input{
+    font-size: 20px;
+       }
+       #fb-btn, #jn{
+        background-color: navy;
+        color: white;
+        border: none;
+        padding: 10px 5px 10px 5px;
+        border-radius: 10px;
+        font-size: larger;
+        margin-top: 10px;
+       }
+       #fb-btn:hover, #jn:hover{
+        cursor: pointer;
+       }
+     
+    </style>
+</head>
+<body>
+    <div id="parent">
+     <div>
+        <form>
+            <h1>Join Unsplash</h1>
+            <p>Already have an account? <a href="">LogIn</a></p>
+            <button id="fb-btn"> <i class="fa-brands fa-facebook"></i>Join Using Facebook</button>
+            <p>First Name</p>
+           <input type="text" placeholder="" id="name"> 
+           <p>Last Name</p>
+           <input type="text" placeholder="" id="lname"> 
+           <p>Email</p>
+           <input type="email" placeholder="" id="email"> 
+           <p>Username</p>
+           <input type="text" placeholder="" id="uname"> 
+           <p>Password</p>
+           <input type="password" placeholder="" id="password"> 
+           <button id="jn">JOIN</button>
+        </form>
+     </div>
+    </div>
+</body>
+</html>
+<script>
+    let form = document.querySelector("form");
+
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+
+        if(form.name.value ==="" || form.lname.value ==="" || form.email.value ===""  
+
+        || form.uname.value ===""|| form.password.value ===""  ){
+            alert("Fill all the information")
+        }
+        else{
+            let obj = {
+                name:form.name.value,
+                lname:form.lname.value,
+                email:form.email.value,
+                uname:form.uname.value,
+                password:form.password.value,
+            }
+            localStorage.setItem("user-data",JSON.stringify(obj));
+            window.location.href = "login.html"
+        }
+    })
+</script>

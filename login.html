@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+      body {
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+      }
+      #parent {
+        width: 100%;
+        height: 700px;
+        display: flex;
+        justify-content: center;
+      }
+      #parent > div {
+        width: 25%;
+        height: 100%;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+          rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        border: 1px solid blueviolet;
+        border-radius: 15px;
+      }
+      #parent > div > form {
+        display: flex;
+        flex-direction: column;
+
+        padding: 30px;
+        margin-top: -40px;
+      }
+      #parent > div > form > input {
+        font-size: 20px;
+      }
+      #parent > div > form > img {
+        padding-top: 30px;
+        padding-left: 40%;
+        width: 20%;
+        
+      }
+      #fb-btn,
+      #jn {
+        background-color: navy;
+        color: white;
+        border: none;
+        padding: 10px 5px 10px 5px;
+        border-radius: 10px;
+        font-size: larger;
+        margin-top: 10px;
+      }
+      #fb-btn:hover,
+      #jn:hover {
+        cursor: pointer;
+      }
+      #parent > div > form >p{
+        font-size: 25px;
+        text-align: center;
+      }
+      #parent > div > form >h3{
+        text-align: center;
+        font-size: 20px;
+      }
+      #parent > div > form >h1{
+        text-align: center;
+      }
+   #inputp{
+    text-align: left;
+   }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <div>
+        <form>
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAJ1BMVEUAAAD////V1dWWlpZ0dHTPz89qamrh4eGQkJDk5OTR0dGtra3Y2NgWv+ptAAABL0lEQVR4nO3cMQ7CQAxFwQCBQOD+56Wms2RHxjDvAKs/vbXLqaR1qW+tmbbUPENISJiIMBghIWEiwmCEhISJCIMREhImIgxGSEiYiDAYISFhIsJghISEiQiDERISJiIMRkhImIgwGCEhYSLCYISEhIkIgxESEiYiDPb7wtsBwlvNtCLhdq5vq5lWJPziCOdHOD/C+RHOj3B+hPMjnB/h/AjnRzg/wvkRzo9wfoTzI5wf4fz+QHip6P44YNrjXrKt6KrgeoDwWrStJkJCwv4ICQn7IyQk7I+QkLA/QkLC/ggJCfsjJCTsj5CQsD9CQsL+CAkJ+yMkJOyPkJCwP0JCwv4ICQn7IyQk7G8/QLh3oz56vsq/oH09u1GSJEmSJEmSJEmSJEmSJEmSJEmSJP1rbwwaXQZE0kwUAAAAAElFTkSuQmCC"
+            alt=""
+          />
+          <h1>Log In</h1>
+          <p>Welcome Back.</p>
+          <button id="jn" ><a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=779900868722692&kid_directed_site=0&app_id=779900868722692&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv5.0%2Fdialog%2Foauth%3Fclient_id%3D779900868722692%26redirect_uri%3Dhttps%253A%252F%252Funsplash.com%252Fusers%252Fauth%252Ffacebook%252Fcallback%26response_type%3Dcode%26scope%3Demail%26state%3Db97886a4e0f5ee1f52434f7c810c0f1ef426199741c038ab%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dd09de570-3be6-49a3-88fd-de78712b8993%26tp%3Dunspecified&cancel_url=https%3A%2F%2Funsplash.com%2Fusers%2Fauth%2Ffacebook%2Fcallback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Db97886a4e0f5ee1f52434f7c810c0f1ef426199741c038ab%23_%3D_&display=page&locale=mr_IN&pl_dbl=0"></a> Login with Facebook</button>
+
+          <h3>OR</h3>
+          <p id="inputp">Email</p>
+          <input type="email" id="email" placeholder="" />
+          <a href="">Forgot your password?</a>
+          <p id="inputp1">Password</p>
+          <input type="password" placeholder="" id="password" />
+          <button id="fb-btn">Login</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let form = document.querySelector("form");
+  let user = JSON.parse(localStorage.getItem("user-data"));
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let formData = {
+      email: form.email.value,
+      password: form.password.value,
+    };
+    if (form.email.value === "" || form.password.value === "") {
+      alert("Fill all the fields");
+    } else {
+      if (user === null) {
+        alert("Create account first.");
+      } else if (
+        user.email === formData.email &&
+        user.password === formData.password
+      ) {
+        alert("login successful");
+        localStorage.setItem("user-data", JSON.stringify(user));
+        window.location.href = "index.html";
+      } else {
+        alert("check your credentials agin");
+      }
+    }
+  });
+</script>
